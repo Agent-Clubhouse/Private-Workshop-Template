@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "name": "My Private Marketplace",
+  "description": "Internal Clubhouse plugins. Update this description in registry/registry.json after forking.",
+  "updated": "2026-05-17T00:00:00.000Z",
+  "supportedApis": {
+    "latest": "0.7",
+    "minimum": "0.6",
+    "versions": ["0.6", "0.7"]
+  },
+  "plugins": []
+}

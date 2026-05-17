@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Build artifacts (plugins, if you keep source in this repo, generally check dist/ in)
+*.tmp.zip
+
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Clubhouse agent workspaces (don't commit local agent state)
+.clubhouse/agents/
+.clubhouse/.local/
+.clubhouse/agents.json
+.clubhouse/agents.json.bak
+.clubhouse/settings.local.json

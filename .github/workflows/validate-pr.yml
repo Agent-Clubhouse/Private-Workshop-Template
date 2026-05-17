@@ -1,0 +1,33 @@
+name: Validate registry
+
+on:
+  pull_request:
+    paths:
+      - 'registry/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'registry/**'
+      - 'scripts/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate registry schema
+        run: node scripts/validate-registry.mjs
+
+      - name: Check asset URLs are reachable
+        run: node scripts/validate-registry.mjs --check-assets
+        continue-on-error: true
